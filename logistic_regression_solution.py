@@ -106,7 +106,9 @@ def do_experiments(start, end, step_num):
         plt.title(f"Shift Distance = {distance:.2f}", fontsize=24)
         plt.xlabel("x1", fontsize=20)
         plt.ylabel("x2", fontsize=20)
-        plt.legend(loc='upper left', fontsize=16)
+        plt.legend(loc='lower left', fontsize=16)
+        plt.xlim(x_min, x_max)
+        plt.ylim(y_min, y_max)
 
 
         # Plot fading red and blue contours for confidence levels
@@ -145,28 +147,28 @@ def do_experiments(start, end, step_num):
 
     # Implement: Plot beta0
     plt.subplot(3, 3, 1)
-    plt.plot(shift_distances, beta0_list, marker='o', label='Beta0', color='blue')
+    plt.plot(shift_distances, beta0_list, marker='o', label='Beta0')
     plt.title("Shift Distance vs Beta0")
     plt.xlabel("Shift Distance")
     plt.ylabel("Beta0")
 
     # Implement: Plot beta1
     plt.subplot(3, 3, 2)
-    plt.plot(shift_distances, beta1_list, marker='o', label='Beta1', color='green')
+    plt.plot(shift_distances, beta1_list, marker='o', label='Beta1')
     plt.title("Shift Distance vs Beta1 (Coefficient for x1)")
     plt.xlabel("Shift Distance")
     plt.ylabel("Beta1")
 
     # Implement: Plot beta2
     plt.subplot(3, 3, 3)
-    plt.plot(shift_distances, beta2_list, marker='o', label='Beta2', color='red')
+    plt.plot(shift_distances, beta2_list, marker='o', label='Beta2')
     plt.title("Shift Distance vs Beta2 (Coefficient for x2)")
     plt.xlabel("Shift Distance")
     plt.ylabel("Beta2")
 
     # Implement: Plot beta1 / beta2 (Slope)
     plt.subplot(3, 3, 4)
-    plt.plot(shift_distances, slope_list, marker='o', label='Slope', color='orange')
+    plt.plot(shift_distances, slope_list, marker='o', label='Slope')
     plt.title("Shift Distance vs Beta1 / Beta2 (Slope)")
     plt.xlabel("Shift Distance")
     plt.ylabel("Beta1 / Beta2")
@@ -174,21 +176,21 @@ def do_experiments(start, end, step_num):
 
     # Implement: Plot beta0 / beta2 (Intercept ratio)
     plt.subplot(3, 3, 5)
-    plt.plot(shift_distances, intercept_list, marker='o', label='Intercept', color='purple')
+    plt.plot(shift_distances, intercept_list, marker='o', label='Intercept')
     plt.title("Shift Distance vs Beta0 / Beta2 (Intercept Ratio)")
     plt.xlabel("Shift Distance")
     plt.ylabel("Beta0 / Beta2")
 
     # Plot logistic loss
     plt.subplot(3, 3, 6)
-    plt.plot(shift_distances, loss_list, marker='o', label='Log Loss', color='black')
+    plt.plot(shift_distances, loss_list, marker='o', label='Log Loss')
     plt.title("Shift Distance vs Logistic Loss")
     plt.xlabel("Shift Distance")
     plt.ylabel("Logistic Loss")
 
     # Implement: Plot margin width
     plt.subplot(3, 3, 7)
-    plt.plot(shift_distances, margin_widths, marker='o', label='Margin Width', color='yellow')
+    plt.plot(shift_distances, margin_widths, marker='o', label='Margin Width')
     plt.title("Shift Distance vs Margin Width")
     plt.xlabel("Shift Distance")
     plt.ylabel("Margin Width")
